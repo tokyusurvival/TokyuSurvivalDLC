@@ -156,6 +156,10 @@ monogatari.characters ({
 		},
 		// default_expression: 'normal',
 	},
+	'fdy': {
+			name: '辅导员',
+			color: '#00cc33',
+		},
 
 });
 
@@ -215,7 +219,6 @@ monogatari.$('next_day', {
 	}
 });
 
-
 /**
  * =======================================
  * 
@@ -230,8 +233,7 @@ monogatari.script ({
 	'Start': [
 		'show canvas stats',
 		'$ set_stats_size',
-		's example',
-		'jump ending'
+		'jump return-enter-name',
 	],
 
 	'ending': [
