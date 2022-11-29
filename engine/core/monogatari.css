@@ -12,10 +12,10 @@
 }
 /* ========手机聊天界面===============*/
 .chat-panel{
-  margin-top:8%;
+  margin-top:5%;
   margin-left:auto;
   margin-right:auto;
-  width:800px;
+  width:400px;
   padding:20px 10px;
   border: solid slategrey 1px;
 }
@@ -24,7 +24,6 @@
   background:#111111;
   text-align:center;
   line-height: 3;
-  width:800px;
 }
 .message{
   font-size:15px;
@@ -41,7 +40,7 @@
   margin-left: 10px;
 }
 .content-right{
-  margin-left: 470px;
+  margin-left: 70px;
 }
 .content-left::before{
   content:"";
