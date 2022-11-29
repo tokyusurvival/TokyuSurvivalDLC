@@ -10,6 +10,7 @@
 	--animate-delay:1s;
 	--animate-repeat:1
 }
+
 /* ========手机聊天界面===============*/
 .chat-panel{
   margin-top:5%;
@@ -25,7 +26,7 @@
   text-align:center;
   line-height: 3;
 }
-.message{
+.chat-message{
   font-size:15px;
   position:relative;
   width:300px;
@@ -62,6 +63,7 @@
 }
 
 /* ==============手机聊天界面结束===========*/
+
 .animated {
 	-webkit-animation-duration:1s;
 	animation-duration:1s;
