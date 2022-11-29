@@ -20,6 +20,7 @@
  *  221128 【gao】已根据ito的注释进行演绎，加入立绘、背景、音效；
  *         跳转部分：jump到【4B0】老乡群剧情、jump到【END1】留校剧情尚未实现，等待剧情文案编入；
  *         手机界面显示尚未实现，待优化。
+ *  221129 【gao】手机界面显示已实现，细节待优化。
  * =======================================
  **/
 
@@ -34,6 +35,13 @@ monogatari.action ('message').messages ({
 	},
 });
 
+monogatari.component ('main-screen').template (() => {
+    return `
+        <h1>My Awesome Game</h1>
+        <main-menu></main-menu>
+    `;
+});
+
 monogatari.script ({
 	/**
 	 * ====================================
@@ -41,6 +49,9 @@ monogatari.script ({
 	 * ====================================
 	 **/
 	'return-enter-name':[
+//	    'nvl <div class="talkWindow"><div id="talk" class="left talk radius"<p>dsadasdasdasdasdasdds</p></div> </div>',
+
+//	    '<div id="test" class="animated panel3 speechBubble leftTail fadeInDown"> abcd',
 		{
 			'Input': {
 				'Text': '你叫甚么名字?',
@@ -151,13 +162,14 @@ monogatari.script ({
 		//ito：如果能在手机窗口中显示对话效果应该会好些如果不行的话就用普通对话框。
 		//【播放提示音】
 		'play sound new_message',
-		'fdy {{player.name}}，最近文部省放宽了返乡限制，你有没有打算回家呀？',
-		'i 老师，近期期末临近，学业比较繁重。我还是打算再等一阵儿，把返乡时间和期末错开，集中精力完成学业。',
-		'fdy 学业忙，老师都很理解。不过还是建议你趁现在返乡吧。',
-		'fdy 接下来这一周是文部省给学生争取出来的时间窗口，这段时间专门向咱们高校学生开放售票，保证想回家的学生都能回家。',
-		'fdy 过了这一周，整个铁道系统就会面向东京市民全面开放，',
-		'fdy 到时候所有市民可都会涌进售票系统，学生想买票也不一定买得着了。错过了这个窗口，想要再回家就很难了。',
-		'fdy 你想好了吗？确定不返乡吗？',
+//		'fdy {{player.name}}，最近文部省放宽了返乡限制，你有没有打算回家呀？',
+//		'i 老师，近期期末临近，学业比较繁重。我还是打算再等一阵儿，把返乡时间和期末错开，集中精力完成学业。',
+//		'fdy 学业忙，老师都很理解。不过还是建议你趁现在返乡吧。',
+//		'fdy 接下来这一周是文部省给学生争取出来的时间窗口，这段时间专门向咱们高校学生开放售票，保证想回家的学生都能回家。',
+//		'fdy 过了这一周，整个铁道系统就会面向东京市民全面开放，',
+//		'fdy 到时候所有市民可都会涌进售票系统，学生想买票也不一定买得着了。错过了这个窗口，想要再回家就很难了。',
+//		'fdy 你想好了吗？确定不返乡吗？',
+        'nvl <div class="chat-panel"> <div class="chat-head" style="color:white"> <h6>辅导员</h6> </div> <div class="content-left message" style="color:#000000"> {{player.name}}，最近文部省放宽了返乡限制，你有没有打算回家呀？ </div> <div class="content-right message" style="color:#000000"> 老师，近期期末临近，学业比较繁重。我还是打算再等一阵儿，把返乡时间和期末错开，集中精力完成学业。 </div> <div class="content-left message" style="color:#000000"> 学业忙，老师都很理解。不过还是建议你趁现在返乡吧。 </div> <div class="content-left message" style="color:#000000"> 接下来这一周是文部省给学生争取出来的时间窗口，这段时间专门向咱们高校学生开放售票，保证想回家的学生都能回家。 </div> <div class="content-left message" style="color:#000000"> 过了这一周，整个铁道系统就会面向东京市民全面开放， </div> <div class="content-left message" style="color:#000000"> 过到时候所有市民可都会涌进售票系统，学生想买票也不一定买得着了。错过了这个窗口，想要再回家就很难了。 </div> <div class="content-left message" style="color:#000000"> 你想好了吗？确定不返乡吗？ </div></div>',
 		//【结束聊天窗口】
 		'i 刚才辅导员给我发消息，说此时不返，我就将和万千东京居民激情竞争，为了珍贵的返乡机会……',
 		'show character a normal',
@@ -191,9 +203,10 @@ monogatari.script ({
 		//ito：如果能在手机窗口中显示对话效果应该会好些如果不行的话就用普通对话框。
 		//【播放提示音】
 		'play sound new_message',
-		'i 老师，我想了想，还是返乡吧。',
-		'i 我这就去填返乡申请，之后辛苦学院老师审核一下了。',
-		'fdy 没事的，不辛苦。我们也希望同学们能回家过得好一点。',
+		'nvl <div class="chat-panel"> <div class="chat-head" style="color:white"> <h6>辅导员</h6> </div> <div class="content-right message" style="color:#000000"> 老师，我想了想，还是返乡吧。 </div><div class="content-right message" style="color:#000000"> 我这就去填返乡申请，之后辛苦学院老师审核一下了。 </div> <div class="content-left message" style="color:#000000"> 没事的，不辛苦。我们也希望同学们能回家过得好一点。 </div> </div>',
+//		'i 老师，我想了想，还是返乡吧。',
+//		'i 我这就去填返乡申请，之后辛苦学院老师审核一下了。',
+//		'fdy 没事的，不辛苦。我们也希望同学们能回家过得好一点。',
 		//【窗口结束】
 		'i 虽然说填写了返乡申请，但仔细一想，怎么返还是个问题呢……',
 		'i 我的老家不在文部省可安排返乡的42个城市之一，现在的出东京的铁道系统运营状况和其他各地应该如何实现闭环管理，我心里一点数都没有……',
@@ -218,9 +231,10 @@ monogatari.script ({
 		//ito：如果能在手机窗口中显示对话效果应该会好些如果不行的话就用普通对话框。
 		//【播放提示音】
 		'play sound new_message',
-		'i 老师，感谢您的好意，不过我还是想留在学校，我没信心能一边在返乡路途上辗转一边准备期末结课……',
-		'fdy 好吧，没关系。在学校也要注意劳逸结合！',
-		'i 好的，谢谢老师。',
+//		'i 老师，感谢您的好意，不过我还是想留在学校，我没信心能一边在返乡路途上辗转一边准备期末结课……',
+//		'fdy 好吧，没关系。在学校也要注意劳逸结合！',
+//		'i 好的，谢谢老师。',
+		'nvl <div class="chat-panel"> <div class="chat-head" style="color:white"> <h6>辅导员</h6> </div> <div class="content-right message" style="color:#000000"> 老师，感谢您的好意，不过我还是想留在学校，我没信心能一边在返乡路途上辗转一边准备期末结课……, </div> <div class="content-left message" style="color:#000000"> 好吧，没关系。在学校也要注意劳逸结合！ </div><div class="content-right message" style="color:#000000"> 好的，谢谢老师。 </div> </div>',
 		//'jump ending1-until-july'
 		//上面这行是我暂时写的，需要等和后续后续定了之后再去掉双杠
 		//jump到【END1】留校剧情
