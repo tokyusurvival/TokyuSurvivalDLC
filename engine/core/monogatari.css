@@ -13,54 +13,57 @@
 
 /* ========手机聊天界面===============*/
 .chat-panel{
-  margin-top:5%;
-  margin-left:auto;
-  margin-right:auto;
-  width:400px;
-  padding:20px 10px;
-  border: solid slategrey 1px;
-}
-.chat-head{
-  position:relative;
-  background:#111111;
-  text-align:center;
-  line-height: 3;
-}
-.chat-message{
-  font-size:15px;
-  position:relative;
-  width:300px;
-  border-radius:10px;
-  background:#9EEA6A;
-  padding:10px;
-  line-height: 1.5;
-  margin-top:10px;
-}
-.content-left{
-  background:#DDDDDD;
-  margin-left: 10px;
-}
-.content-right{
-  margin-left: 70px;
-}
-.content-left::before{
-  content:"";
-  position: absolute;
-  top:5px;
-  left:-15px;
-  border-width:10px 10px 10px 10px;
-  border-color:transparent #DDDDDD transparent transparent ;
-  border-style:solid;
-}
-.content-right::after{
-  content:"";
-  position: absolute;
-  top:10px;
-  left:295px;
-  border-width:10px 10px 10px 10px;
-  border-color:transparent transparent transparent  #9EEA6A;
-  border-style:solid;
-}
+    margin-top:5%;
+    margin-left:auto;
+    margin-right:auto;
+    max-width:600px;
+    width: 100%;
+    padding:20px 10px;
+    border: solid #414141 1px;
+    border-radius: 12px;
+    border-width: 2px;
+  }
+  .chat-head{
+    position:relative;
+    background:#111111;
+    text-align:center;
+    line-height: 3;
+  }
+  .chat-message{
+    font-size:15px;
+    position:relative;
+    width:80%;
+    border-radius:10px;
+    background:#9EEA6A;
+    padding:10px;
+    line-height: 1.5;
+    margin-top:10px;
+  }
+  .content-left{
+    background:#DDDDDD;
+    margin-left: 10px;
+  }
+  .content-right{
+      margin-left: 18%;
+  }
+  .content-left::before{
+    content:"";
+    position: absolute;
+    top:5px;
+    left:-15px;
+    border-width:10px 10px 10px 10px;
+    border-color:transparent #DDDDDD transparent transparent ;
+    border-style:solid;
+  }
+  .content-right::after{
+    content:"";
+    position: absolute;
+    top:10px;
+    left:99%;
+    border-width:10px 10px 10px 10px;
+    border-color:transparent transparent transparent  #9EEA6A;
+    border-style:solid;
+  }
 
 /* ==============手机聊天界面结束===========*/
 
